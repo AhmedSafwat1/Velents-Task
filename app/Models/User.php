@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,6 +14,9 @@ class User extends Authenticatable implements JWTSubject
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
     use Notifiable;
+    use HasRoles;
+    
+
 
     /**
      * The attributes that are mass assignable.
@@ -34,6 +38,8 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'remember_token',
     ];
+
+    protected $guard_name = ['api'];
 
     /**
      * Get the attributes that should be cast.

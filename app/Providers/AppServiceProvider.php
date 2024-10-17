@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\Services\OrderService;
 use App\Services\AuthenticationService;
-use App\Services\Contracts\AuthenticationServiceInterface;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Resources\Json\JsonResource;
+use App\Services\Contracts\OrderServiceInterface;
+use App\Services\Contracts\AuthenticationServiceInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //Bind Service
         $this->app->bind(AuthenticationServiceInterface::class , AuthenticationService::class);
+        $this->app->bind(OrderServiceInterface::class , OrderService::class);
     }
 
     /**
@@ -22,6 +26,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
     }
 }
