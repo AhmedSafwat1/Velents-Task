@@ -59,4 +59,3 @@ PUSHER_SCHEME="https"
 ## API Documentation (Postman collection)
 - document https://documenter.getpostman.com/view/6461163/2sAXxWYoWb
 - collection Find in project with name `Velents-Task.postman_collection.json`
-
