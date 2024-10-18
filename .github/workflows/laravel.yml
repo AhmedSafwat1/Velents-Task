@@ -1,0 +1,33 @@
+name: Laravel CI
+
+on:
+  pull_request:
+    branches:
+      - main  # Change this to your default branch if it's different
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'  # Specify the PHP version you need
+          extensions: mbstring, xml, bcmath, json, mysql  # Add any other required extensions
+          coverage: none
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run Laravel Pint
+        run: ./vendor/bin/pint
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan analyse
+
+      - name: Run Unit Tests
+        run: ./vendor/bin/phpunit

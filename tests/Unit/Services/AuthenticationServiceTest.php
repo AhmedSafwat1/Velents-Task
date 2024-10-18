@@ -2,13 +2,14 @@
 
 namespace Tests\Unit\Services;
 
-use App\Services\AuthenticationService;
-use Illuminate\Foundation\Auth\User;
+use Mockery;
+use Tests\TestCase;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
+use App\Services\AuthenticationService;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\ValidationException;
-use Tests\TestCase;
 
 class AuthenticationServiceTest extends TestCase
 {
@@ -17,8 +18,8 @@ class AuthenticationServiceTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->authService = new AuthenticationService();
-        $this->authService->setRequest(new Request());
+        $this->authService = new AuthenticationService;
+        $this->authService->setRequest(new Request);
     }
 
     /**
@@ -30,12 +31,19 @@ class AuthenticationServiceTest extends TestCase
         $credentials = ['email' => 'test@example.com', 'password' => 'password'];
 
         // Mock Auth facade
-        Auth::shouldReceive('attempt')->with($credentials, false)->andReturn(true);
-        Auth::shouldReceive('user')->andReturn(new User());
+        $user = Mockery::mock(User::class);
+        $mockGuard = Mockery::mock();
+        $mockGuard->shouldReceive('attempt')->once()->with($credentials, true)->andReturn(true);
+        $mockGuard->shouldReceive('user')->andReturn($user);
+
+
 
         // Mock RateLimiter facade
         RateLimiter::shouldReceive('clear')->once();
         RateLimiter::shouldReceive('tooManyAttempts')->andReturn(false);
+        
+        Auth::shouldReceive('guard')->twice()->with('api')->andReturn($mockGuard);
+
 
         $user = $this->authService->authenticated($credentials);
 
@@ -47,7 +55,7 @@ class AuthenticationServiceTest extends TestCase
      */
     public function testAuthenticatedTooManyAttempts()
     {
-        $this->authService->setRequest(new Request());
+        $this->authService->setRequest(new Request);
 
         RateLimiter::shouldReceive('tooManyAttempts')->andReturn(true);
         RateLimiter::shouldReceive('availableIn')->andReturn(30);
@@ -65,7 +73,10 @@ class AuthenticationServiceTest extends TestCase
         $credentials = ['email' => 'test@example.com', 'password' => 'wrongpassword'];
 
         // Mock Auth facade
-        Auth::shouldReceive('attempt')->with($credentials, false)->andReturn(false);
+        $mockGuard = Mockery::mock();
+        $mockGuard->shouldReceive('attempt')->once()->with($credentials, true)->andReturn(false);
+        Auth::shouldReceive('guard')->once()->with('api')->andReturn($mockGuard);
+
 
         // Mock RateLimiter facade
         RateLimiter::shouldReceive('tooManyAttempts')->andReturn(false);

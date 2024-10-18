@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Auth\LoginRequest;
 use App\Http\Resources\Api\User\UserResource;
 use App\Services\Contracts\AuthenticationServiceInterface;
+use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
 {
@@ -17,39 +17,33 @@ class AuthController extends Controller
          * @var AuthenticationServiceInterface
          */
         protected AuthenticationServiceInterface $authenticationService
-    ) {
-    }
+    ) {}
 
     /**
      * Login Request
-     *
-     * @param LoginRequest $request
-     * @return JsonResponse
      */
     public function login(LoginRequest $request): JsonResponse
     {
         $user = $this->authenticationService
-                ->setUserName("email")
-                ->setRequest($request)
-                ->authenticated($request->validated());
+            ->setUserName('email')
+            ->setRequest($request)
+            ->authenticated($request->validated());
 
         return $this->successResponse([
-            "user"  => new UserResource($user),
-            "token" => $this->prepareTokenResponse(),
+            'user' => new UserResource($user),
+            'token' => $this->prepareTokenResponse(),
         ]);
     }
 
     /**
      * Get the token array structure.
-     *
-     * @return array
      */
     protected function prepareTokenResponse(): array
     {
         return [
-            'access_token' => auth("api")->getToken()?->get(),
+            'access_token' => auth('api')->getToken()?->get(),
             'token_type' => 'bearer',
-            'expires_in' => auth("api")->factory()->getTTL() * 60
+            'expires_in' => auth('api')->factory()->getTTL() * 60,
         ];
     }
 }

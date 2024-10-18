@@ -3,15 +3,15 @@
 namespace App\Support\Filter;
 
 use Exception;
-use Illuminate\Support\Arr;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Support\Arr;
 
 class FiltrationEngine
 {
     /**
      * Request  Filters .
      *
-     * @var array $requestFilters
+     * @var array
      */
     protected $requestFilters;
 
@@ -23,20 +23,17 @@ class FiltrationEngine
     protected $builder;
 
     /**
-    * Array of filters to be applied.
-    *
-    * @var array
-    */
+     * Array of filters to be applied.
+     *
+     * @var array
+     */
     protected $filters = [
     ];
-
-
 
     /**
      * Constructor.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $builder Eloquent builder instance.
-     * @param  @var array $requestFilters.
+     * @param  \Illuminate\Database\Eloquent\Builder  $builder  Eloquent builder instance.
      */
     public function __construct(Builder $builder, array $requestFilters)
     {
@@ -47,8 +44,7 @@ class FiltrationEngine
     /**
      * Add filters to the engine.
      *
-     * @param array $filters Array of filters to add to the engine. Structure: ["filter-name" => FilterClass::class]
-     *
+     * @param  array  $filters  Array of filters to add to the engine. Structure: ["filter-name" => FilterClass::class]
      * @return FiltrationEngine
      */
     public function plugFilters(array $filters = [])
@@ -61,15 +57,13 @@ class FiltrationEngine
     /**
      * Apply the filters on the builder.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $builder Eloquent builder.
-     *
      * @return void
      */
     public function run()
     {
         foreach ($this->relevantFilters() as $filterName => $value) {
             $filter = $this->resolveFilter($filterName);
-            $value =  !is_array($value) ? $filter->getMappings()[$value] ?? $value : $value;
+            $value = ! is_array($value) ? $filter->getMappings()[$value] ?? $value : $value;
             $filter->filter($this->builder, $value);
         }
     }
@@ -77,17 +71,16 @@ class FiltrationEngine
     /**
      * Get a new filter instance using a given filter name.
      *
-     * @param string $filter The filter name.
-     *
+     * @param  string  $filter  The filter name.
      * @return \App\Support\Filter\BaseFilter
      */
     public function resolveFilter($filter)
     {
-        if (!isset($this->filters[$filter])) {
+        if (! isset($this->filters[$filter])) {
             throw new Exception("Could not resolve filter associated with name: '{$filter}'");
         }
 
-        return new $this->filters[$filter]();
+        return new $this->filters[$filter];
     }
 
     /**

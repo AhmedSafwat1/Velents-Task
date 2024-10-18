@@ -24,7 +24,7 @@ trait LogsOrderChanges
                 $groupedChanges[] = [
                     'attribute' => $attribute,
                     'original_value' => $originalValue,
-                    'new_value' => $newValue
+                    'new_value' => $newValue,
                 ];
             }
 
@@ -35,7 +35,7 @@ trait LogsOrderChanges
             OrderChange::create([
                 'order_id' => $model->id,
                 'changes' => json_encode($groupedChanges),  // Store the grouped changes in JSON
-                'changed_by' => $changedBy
+                'changed_by' => $changedBy,
             ]);
         });
     }

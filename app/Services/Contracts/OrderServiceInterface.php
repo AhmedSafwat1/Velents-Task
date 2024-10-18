@@ -3,36 +3,32 @@
 namespace App\Services\Contracts;
 
 use App\Models\Order;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\Paginator;
 
 interface OrderServiceInterface
 {
     /**
      * Create Order
-     *
-     * @param array $data
-     * @return Order
      */
     public function create(array $data): Order;
 
     /**
      * List
      *
-     * @param array $filters
-     * @param array $with
-     * @param boolean $paginate
      * @return Collection
      */
     public function list(array $filters = [], array $with = [], bool $paginate = true): Collection|Paginator;
 
+    /**
+     * Update
+     */
+    public function update(int $id, array $data): Order;
 
     /**
-    * Update
-    *
-    * @param integer $id
-    * @param array $data
-    * @return Order
-    */
-    public function update(int $id, array $data): Order;
+     * Handle Payment
+     *
+     * @param  string  $method
+     */
+    public function handlePaymentUrl(Order $order, $method = 'paypal'): string;
 }

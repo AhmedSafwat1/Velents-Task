@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Enums\PaymentStatus;
-use App\Traits\LogsOrderChanges;
 use App\Support\Filter\Filterable;
+use App\Traits\LogsOrderChanges;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -19,8 +19,8 @@ class Order extends Model
     ];
 
     /**
-    * Get all of the order's payment transactions.
-    */
+     * Get all of the order's payment transactions.
+     */
     public function paymentTransactions()
     {
         return $this->morphOne(PaymentTransaction::class, 'transactionable');

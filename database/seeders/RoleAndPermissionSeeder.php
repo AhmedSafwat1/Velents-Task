@@ -5,39 +5,32 @@ namespace Database\Seeders;
 use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RoleAndPermissionSeeder extends Seeder
 {
     /**
      * Guard for role and permission
-     *
-     * @var string
      */
-    protected string $guard = "api";
+    protected string $guard = 'api';
 
     /**
      * Permissions
-     *
-     * @var array
      */
     protected array $permissions = [
-        "orders" => [
-            "show_order",
-            "edit_order",
-            "add_order",
-            "delete_order",
-            "change_status",
-        ]
+        'orders' => [
+            'show_order',
+            'edit_order',
+            'add_order',
+            'delete_order',
+            'change_status',
+        ],
     ];
 
     /**
      * Roles
-     *
-     * @var array
      */
     protected array $roles = [
-        "admin"
+        'admin',
     ];
 
     /**
@@ -50,13 +43,12 @@ class RoleAndPermissionSeeder extends Seeder
         foreach ($this->permissions as $category => $permissions) {
             foreach ($permissions as $permission) {
                 $permission = Permission::updateOrCreate(
-                    ["guard_name" => $this->guard , "name" => $permission],
-                    ["category" => $category]
+                    ['guard_name' => $this->guard, 'name' => $permission],
+                    ['category' => $category]
                 );
                 $permissionsId[] = $permission->id;
             }
         }
-
 
         foreach ($roles as $role) {
             $role->permissions()->syncWithoutDetaching($permissionsId);
@@ -65,16 +57,14 @@ class RoleAndPermissionSeeder extends Seeder
 
     /**
      * Create Roles
-     *
-     * @return array
      */
     public function createRoles(): array
     {
         $roles = [];
         foreach ($this->roles as $role) {
-            $roles[] = Role::updateOrCreate(["name" => $role, "guard_name" => $this->guard]);
+            $roles[] = Role::updateOrCreate(['name' => $role, 'guard_name' => $this->guard]);
         }
+
         return $roles;
     }
-
 }

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class OrderChange extends Model
 {
     use HasUuids;
-    
+
     protected $fillable = ['order_id', 'changes', 'changed_by'];
 }
