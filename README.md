@@ -46,7 +46,7 @@ php artisan jwt:secret
 Email    : test@test.com
 Password : test123456
 ```
-# Configuring the payment gateway integration. ( i use PAYPAL by Omnipay pakcage)
+## Configuring the payment gateway integration. ( i use PAYPAL by Omnipay pakcage)
 
 ```bash
 PAYPAL_CLIENT_ID="AaxDq2YIjqz9b-J4Xandmi-NtWx2z-wh4j4b-mW7vPBoawX3k_dIV7UsojyXDlvUMtjuh0sU3CB5pLOff"
