@@ -17,7 +17,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'  # Specify the PHP version you need
-          extensions: mbstring, xml, bcmath, json, sqlite
+          extensions: mbstring, xml, bcmath, json, mysql ,sqlite
           coverage: none
 
       - name: Install dependencies
@@ -26,8 +26,6 @@ jobs:
       - name: Create .env file
         run: |
           cp .env.example .env
-          echo "DB_CONNECTION=sqlite" >> .env
-          echo "DB_DATABASE=:memory:" >> .env  # Use in-memory SQLite for tests
 
       - name: Run Laravel Pint
         run: ./vendor/bin/pint
