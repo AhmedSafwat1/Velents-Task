@@ -20,11 +20,18 @@ jobs:
           extensions: mbstring, xml, bcmath, json, mysql  # Add any other required extensions
           coverage: none
 
-      - name: set app key
-        run : php artisan key:generate
-        
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Generate APP_KEY
+        run: |
+          php artisan key:generate
+          echo "APP_KEY=$(php artisan key:generate --show)" >> $GITHUB_ENV
+
+      - name: Create .env file
+        run: |
+          cp .env.example .env
+          echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env  # Use generated key from previous step
 
       - name: Run Laravel Pint
         run: ./vendor/bin/pint
