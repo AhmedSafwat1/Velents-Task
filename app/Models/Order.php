@@ -5,11 +5,13 @@ namespace App\Models;
 use App\Enums\PaymentStatus;
 use App\Support\Filter\Filterable;
 use App\Traits\LogsOrderChanges;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
     use Filterable;
+    use HasFactory;
     use LogsOrderChanges;
 
     protected $fillable = ['product_name', 'quantity', 'price', 'status'];

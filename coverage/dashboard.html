@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/safwat/Work/Tasks/Velents-Task/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=11.0.7" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=11.0.7" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=11.0.7" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/home/safwat/Work/Tasks/Velents-Task/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Factories/PaymentServiceFactory.php.html#8">App\Factories\PaymentServiceFactory</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/PayPalPaymentWebhookController.php.html#10">App\Http\Controllers\Api\V1\PayPalPaymentWebhookController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PaypalPaymentController.php.html#9">App\Http\Controllers\PaypalPaymentController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Payment/CancelRequest.php.html#7">App\Http\Requests\Payment\CancelRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Payment/CompletePurchaseRequest.php.html#7">App\Http\Requests\Payment\CompletePurchaseRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Order.php.html#11">App\Models\Order</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/BaseFilter.php.html#7">App\Support\Filter\BaseFilter</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/FromFilter.php.html#8">App\Support\Filter\Handler\Order\FromFilter</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/StatusFilter.php.html#8">App\Support\Filter\Handler\Order\StatusFilter</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/ToFilter.php.html#8">App\Support\Filter\Handler\Order\ToFilter</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Events/PaymentEvent.php.html#12">App\Events\PaymentEvent</a></td><td class="text-right">10%</td></tr>
+       <tr><td><a href="Services/Payment/Handler/OrderPaymentServiceHandler.php.html#9">App\Services\Payment\Handler\OrderPaymentServiceHandler</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Support/Filter/FiltrationEngine.php.html#9">App\Support\Filter\FiltrationEngine</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Services/OrderService.php.html#14">App\Services\OrderService</a></td><td class="text-right">53%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#18">App\Services\Payment\PayPalPaymentService</a></td><td class="text-right">59%</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#9">App\Traits\ApiResponse</a></td><td class="text-right">73%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/OrderController.php.html#14">App\Http\Controllers\Api\V1\OrderController</a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#18">App\Services\Payment\PayPalPaymentService</a></td><td class="text-right">63</td></tr>
+       <tr><td><a href="Support/Filter/FiltrationEngine.php.html#9">App\Support\Filter\FiltrationEngine</a></td><td class="text-right">16</td></tr>
+       <tr><td><a href="Services/OrderService.php.html#14">App\Services\OrderService</a></td><td class="text-right">14</td></tr>
+       <tr><td><a href="Factories/PaymentServiceFactory.php.html#8">App\Factories\PaymentServiceFactory</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/Payment/Handler/OrderPaymentServiceHandler.php.html#9">App\Services\Payment\Handler\OrderPaymentServiceHandler</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/FromFilter.php.html#8">App\Support\Filter\Handler\Order\FromFilter</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/StatusFilter.php.html#8">App\Support\Filter\Handler\Order\StatusFilter</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/ToFilter.php.html#8">App\Support\Filter\Handler\Order\ToFilter</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#9">App\Traits\ApiResponse</a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/OrderController.php.html#14">App\Http\Controllers\Api\V1\OrderController</a></td><td class="text-right">5</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Events/PaymentEvent.php.html#33"><abbr title="App\Events\PaymentEvent::broadcastOn">broadcastOn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Events/PaymentEvent.php.html#40"><abbr title="App\Events\PaymentEvent::broadcastWith">broadcastWith</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Factories/PaymentServiceFactory.php.html#10"><abbr title="App\Factories\PaymentServiceFactory::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/PayPalPaymentWebhookController.php.html#12"><abbr title="App\Http\Controllers\Api\V1\PayPalPaymentWebhookController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/PayPalPaymentWebhookController.php.html#21"><abbr title="App\Http\Controllers\Api\V1\PayPalPaymentWebhookController::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PaypalPaymentController.php.html#11"><abbr title="App\Http\Controllers\PaypalPaymentController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PaypalPaymentController.php.html#23"><abbr title="App\Http\Controllers\PaypalPaymentController::completePurchase">completePurchase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/PaypalPaymentController.php.html#33"><abbr title="App\Http\Controllers\PaypalPaymentController::cancel">cancel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Payment/CancelRequest.php.html#14"><abbr title="App\Http\Requests\Payment\CancelRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/Payment/CompletePurchaseRequest.php.html#14"><abbr title="App\Http\Requests\Payment\CompletePurchaseRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Order.php.html#26"><abbr title="App\Models\Order::paymentTransactions">paymentTransactions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthenticationService.php.html#52"><abbr title="App\Services\AuthenticationService::setGuard">setGuard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/OrderService.php.html#28"><abbr title="App\Services\OrderService::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/OrderService.php.html#78"><abbr title="App\Services\OrderService::handlePaymentUrl">handlePaymentUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/Payment/Handler/OrderPaymentServiceHandler.php.html#24"><abbr title="App\Services\Payment\Handler\OrderPaymentServiceHandler::failed">failed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#22"><abbr title="App\Services\Payment\PayPalPaymentService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#132"><abbr title="App\Services\Payment\PayPalPaymentService::cancelPurchase">cancelPurchase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#157"><abbr title="App\Services\Payment\PayPalPaymentService::failed">failed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#183"><abbr title="App\Services\Payment\PayPalPaymentService::findPaymentTransaction">findPaymentTransaction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/BaseFilter.php.html#24"><abbr title="App\Support\Filter\BaseFilter::filter">filter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/BaseFilter.php.html#31"><abbr title="App\Support\Filter\BaseFilter::getMappings">getMappings</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/FiltrationEngine.php.html#77"><abbr title="App\Support\Filter\FiltrationEngine::resolveFilter">resolveFilter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/FromFilter.php.html#17"><abbr title="App\Support\Filter\Handler\Order\FromFilter::filter">filter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/StatusFilter.php.html#17"><abbr title="App\Support\Filter\Handler\Order\StatusFilter::filter">filter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/ToFilter.php.html#17"><abbr title="App\Support\Filter\Handler\Order\ToFilter::filter">filter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Traits/ApiResponse.php.html#50"><abbr title="App\Traits\ApiResponse::errorResponse">errorResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Support/Filter/FiltrationEngine.php.html#62"><abbr title="App\Support\Filter\FiltrationEngine::run">run</abbr></a></td><td class="text-right">25%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#62"><abbr title="App\Services\Payment\PayPalPaymentService::webhookHandler">webhookHandler</abbr></a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/OrderController.php.html#38"><abbr title="App\Http\Controllers\Api\V1\OrderController::create">create</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#107"><abbr title="App\Services\Payment\PayPalPaymentService::completePurchase">completePurchase</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Services/AuthenticationService.php.html#74"><abbr title="App\Services\AuthenticationService::authenticated">authenticated</abbr></a></td><td class="text-right">87%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#62"><abbr title="App\Services\Payment\PayPalPaymentService::webhookHandler">webhookHandler</abbr></a></td><td class="text-right">17</td></tr>
+       <tr><td><a href="Factories/PaymentServiceFactory.php.html#10"><abbr title="App\Factories\PaymentServiceFactory::create">create</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/OrderService.php.html#78"><abbr title="App\Services\OrderService::handlePaymentUrl">handlePaymentUrl</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Support/Filter/FiltrationEngine.php.html#62"><abbr title="App\Support\Filter\FiltrationEngine::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/Payment/Handler/OrderPaymentServiceHandler.php.html#24"><abbr title="App\Services\Payment\Handler\OrderPaymentServiceHandler::failed">failed</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#157"><abbr title="App\Services\Payment\PayPalPaymentService::failed">failed</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/FiltrationEngine.php.html#77"><abbr title="App\Support\Filter\FiltrationEngine::resolveFilter">resolveFilter</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/FromFilter.php.html#17"><abbr title="App\Support\Filter\Handler\Order\FromFilter::filter">filter</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/StatusFilter.php.html#17"><abbr title="App\Support\Filter\Handler\Order\StatusFilter::filter">filter</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Support/Filter/Handler/Order/ToFilter.php.html#17"><abbr title="App\Support\Filter\Handler\Order\ToFilter::filter">filter</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/Payment/PayPalPaymentService.php.html#107"><abbr title="App\Services\Payment\PayPalPaymentService::completePurchase">completePurchase</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Services/AuthenticationService.php.html#74"><abbr title="App\Services\AuthenticationService::authenticated">authenticated</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/V1/OrderController.php.html#38"><abbr title="App\Http\Controllers\Api\V1\OrderController::create">create</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.7</a> using <a href="https://www.php.net/" target="_top">PHP 8.2.24</a> and <a href="https://phpunit.de/">PHPUnit 11.4.1</a> at Fri Oct 18 12:32:10 UTC 2024.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=11.0.7" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=11.0.7" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=11.0.7" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([10,0,1,0,0,0,4,0,1,1,1,18], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([26,0,0,1,0,0,1,0,0,3,1,43], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[10,3,"<a href=\"Events\/PaymentEvent.php.html#12\">App\\Events\\PaymentEvent<\/a>"],[100,1,"<a href=\"Exceptions\/PaymentException.php.html#7\">App\\Exceptions\\PaymentException<\/a>"],[0,3,"<a href=\"Factories\/PaymentServiceFactory.php.html#8\">App\\Factories\\PaymentServiceFactory<\/a>"],[100,3,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#11\">App\\Http\\Controllers\\Api\\V1\\AuthController<\/a>"],[88.88888888888889,5,"<a href=\"Http\/Controllers\/Api\/V1\/OrderController.php.html#14\">App\\Http\\Controllers\\Api\\V1\\OrderController<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/V1\/PayPalPaymentWebhookController.php.html#10\">App\\Http\\Controllers\\Api\\V1\\PayPalPaymentWebhookController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#7\">App\\Http\\Controllers\\Controller<\/a>"],[0,3,"<a href=\"Http\/Controllers\/PaypalPaymentController.php.html#9\">App\\Http\\Controllers\\PaypalPaymentController<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Auth\/LoginRequest.php.html#8\">App\\Http\\Requests\\Api\\V1\\Auth\\LoginRequest<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Order\/CreateOrderRequest.php.html#7\">App\\Http\\Requests\\Api\\V1\\Order\\CreateOrderRequest<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Order\/IndexOrderRequest.php.html#9\">App\\Http\\Requests\\Api\\V1\\Order\\IndexOrderRequest<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Order\/UpdateStatusOrderRequest.php.html#9\">App\\Http\\Requests\\Api\\V1\\Order\\UpdateStatusOrderRequest<\/a>"],[0,1,"<a href=\"Http\/Requests\/Payment\/CancelRequest.php.html#7\">App\\Http\\Requests\\Payment\\CancelRequest<\/a>"],[0,1,"<a href=\"Http\/Requests\/Payment\/CompletePurchaseRequest.php.html#7\">App\\Http\\Requests\\Payment\\CompletePurchaseRequest<\/a>"],[100,1,"<a href=\"Http\/Resources\/Api\/Order\/OrderResource.php.html#8\">App\\Http\\Resources\\Api\\Order\\OrderResource<\/a>"],[100,1,"<a href=\"Http\/Resources\/Api\/User\/UserResource.php.html#8\">App\\Http\\Resources\\Api\\User\\UserResource<\/a>"],[0,1,"<a href=\"Models\/Order.php.html#11\">App\\Models\\Order<\/a>"],[100,0,"<a href=\"Models\/OrderChange.php.html#8\">App\\Models\\OrderChange<\/a>"],[100,1,"<a href=\"Models\/PaymentTransaction.php.html#10\">App\\Models\\PaymentTransaction<\/a>"],[100,0,"<a href=\"Models\/Permission.php.html#7\">App\\Models\\Permission<\/a>"],[100,0,"<a href=\"Models\/Role.php.html#7\">App\\Models\\Role<\/a>"],[100,3,"<a href=\"Models\/User.php.html#12\">App\\Models\\User<\/a>"],[100,2,"<a href=\"Providers\/AppServiceProvider.php.html#11\">App\\Providers\\AppServiceProvider<\/a>"],[100,2,"<a href=\"Providers\/RateLimitServiceProvider.php.html#9\">App\\Providers\\RateLimitServiceProvider<\/a>"],[90.32258064516128,12,"<a href=\"Services\/AuthenticationService.php.html#12\">App\\Services\\AuthenticationService<\/a>"],[53.333333333333336,8,"<a href=\"Services\/OrderService.php.html#14\">App\\Services\\OrderService<\/a>"],[50,4,"<a href=\"Services\/Payment\/Handler\/OrderPaymentServiceHandler.php.html#9\">App\\Services\\Payment\\Handler\\OrderPaymentServiceHandler<\/a>"],[59.154929577464785,24,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#18\">App\\Services\\Payment\\PayPalPaymentService<\/a>"],[0,1,"<a href=\"Support\/Filter\/BaseFilter.php.html#7\">App\\Support\\Filter\\BaseFilter<\/a>"],[50,8,"<a href=\"Support\/Filter\/FiltrationEngine.php.html#9\">App\\Support\\Filter\\FiltrationEngine<\/a>"],[0,2,"<a href=\"Support\/Filter\/Handler\/Order\/FromFilter.php.html#8\">App\\Support\\Filter\\Handler\\Order\\FromFilter<\/a>"],[0,2,"<a href=\"Support\/Filter\/Handler\/Order\/StatusFilter.php.html#8\">App\\Support\\Filter\\Handler\\Order\\StatusFilter<\/a>"],[0,2,"<a href=\"Support\/Filter\/Handler\/Order\/ToFilter.php.html#8\">App\\Support\\Filter\\Handler\\Order\\ToFilter<\/a>"],[100,1,"<a href=\"Support\/Filter\/Filterable.php.html#7\">App\\Support\\Filter\\Filterable<\/a>"],[73.68421052631578,5,"<a href=\"Traits\/ApiResponse.php.html#9\">App\\Traits\\ApiResponse<\/a>"],[100,3,"<a href=\"Traits\/LogsOrderChanges.php.html#8\">App\\Traits\\LogsOrderChanges<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Events\/PaymentEvent.php.html#23\">App\\Events\\PaymentEvent::__construct<\/a>"],[0,1,"<a href=\"Events\/PaymentEvent.php.html#33\">App\\Events\\PaymentEvent::broadcastOn<\/a>"],[0,1,"<a href=\"Events\/PaymentEvent.php.html#40\">App\\Events\\PaymentEvent::broadcastWith<\/a>"],[100,1,"<a href=\"Exceptions\/PaymentException.php.html#12\">App\\Exceptions\\PaymentException::__construct<\/a>"],[0,3,"<a href=\"Factories\/PaymentServiceFactory.php.html#10\">App\\Factories\\PaymentServiceFactory::create<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#13\">App\\Http\\Controllers\\Api\\V1\\AuthController::__construct<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#25\">App\\Http\\Controllers\\Api\\V1\\AuthController::login<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/AuthController.php.html#41\">App\\Http\\Controllers\\Api\\V1\\AuthController::prepareTokenResponse<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/OrderController.php.html#16\">App\\Http\\Controllers\\Api\\V1\\OrderController::__construct<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/OrderController.php.html#28\">App\\Http\\Controllers\\Api\\V1\\OrderController::index<\/a>"],[80,2,"<a href=\"Http\/Controllers\/Api\/V1\/OrderController.php.html#38\">App\\Http\\Controllers\\Api\\V1\\OrderController::create<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/V1\/OrderController.php.html#59\">App\\Http\\Controllers\\Api\\V1\\OrderController::updateStatus<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/PayPalPaymentWebhookController.php.html#12\">App\\Http\\Controllers\\Api\\V1\\PayPalPaymentWebhookController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/V1\/PayPalPaymentWebhookController.php.html#21\">App\\Http\\Controllers\\Api\\V1\\PayPalPaymentWebhookController::__invoke<\/a>"],[0,1,"<a href=\"Http\/Controllers\/PaypalPaymentController.php.html#11\">App\\Http\\Controllers\\PaypalPaymentController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/PaypalPaymentController.php.html#23\">App\\Http\\Controllers\\PaypalPaymentController::completePurchase<\/a>"],[0,1,"<a href=\"Http\/Controllers\/PaypalPaymentController.php.html#33\">App\\Http\\Controllers\\PaypalPaymentController::cancel<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Auth\/LoginRequest.php.html#15\">App\\Http\\Requests\\Api\\V1\\Auth\\LoginRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Order\/CreateOrderRequest.php.html#14\">App\\Http\\Requests\\Api\\V1\\Order\\CreateOrderRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Order\/IndexOrderRequest.php.html#16\">App\\Http\\Requests\\Api\\V1\\Order\\IndexOrderRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Requests\/Api\/V1\/Order\/UpdateStatusOrderRequest.php.html#16\">App\\Http\\Requests\\Api\\V1\\Order\\UpdateStatusOrderRequest::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/Payment\/CancelRequest.php.html#14\">App\\Http\\Requests\\Payment\\CancelRequest::rules<\/a>"],[0,1,"<a href=\"Http\/Requests\/Payment\/CompletePurchaseRequest.php.html#14\">App\\Http\\Requests\\Payment\\CompletePurchaseRequest::rules<\/a>"],[100,1,"<a href=\"Http\/Resources\/Api\/Order\/OrderResource.php.html#15\">App\\Http\\Resources\\Api\\Order\\OrderResource::toArray<\/a>"],[100,1,"<a href=\"Http\/Resources\/Api\/User\/UserResource.php.html#15\">App\\Http\\Resources\\Api\\User\\UserResource::toArray<\/a>"],[0,1,"<a href=\"Models\/Order.php.html#26\">App\\Models\\Order::paymentTransactions<\/a>"],[100,1,"<a href=\"Models\/PaymentTransaction.php.html#25\">App\\Models\\PaymentTransaction::transactionable<\/a>"],[100,1,"<a href=\"Models\/User.php.html#48\">App\\Models\\User::casts<\/a>"],[100,1,"<a href=\"Models\/User.php.html#61\">App\\Models\\User::getJWTIdentifier<\/a>"],[100,1,"<a href=\"Models\/User.php.html#71\">App\\Models\\User::getJWTCustomClaims<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#16\">App\\Providers\\AppServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/AppServiceProvider.php.html#26\">App\\Providers\\AppServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/RateLimitServiceProvider.php.html#14\">App\\Providers\\RateLimitServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/RateLimitServiceProvider.php.html#22\">App\\Providers\\RateLimitServiceProvider::boot<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#42\">App\\Services\\AuthenticationService::setUserName<\/a>"],[0,1,"<a href=\"Services\/AuthenticationService.php.html#52\">App\\Services\\AuthenticationService::setGuard<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#62\">App\\Services\\AuthenticationService::setRequest<\/a>"],[87.5,3,"<a href=\"Services\/AuthenticationService.php.html#74\">App\\Services\\AuthenticationService::authenticated<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#98\">App\\Services\\AuthenticationService::clearLoginAttempts<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#106\">App\\Services\\AuthenticationService::hasTooManyLoginAttempts<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#117\">App\\Services\\AuthenticationService::incrementLoginAttempts<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#130\">App\\Services\\AuthenticationService::sendLockoutResponse<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#144\">App\\Services\\AuthenticationService::sendInvalidCredentials<\/a>"],[100,1,"<a href=\"Services\/AuthenticationService.php.html#154\">App\\Services\\AuthenticationService::throttleKey<\/a>"],[100,1,"<a href=\"Services\/OrderService.php.html#16\">App\\Services\\OrderService::__construct<\/a>"],[0,1,"<a href=\"Services\/OrderService.php.html#28\">App\\Services\\OrderService::create<\/a>"],[100,1,"<a href=\"Services\/OrderService.php.html#42\">App\\Services\\OrderService::update<\/a>"],[100,2,"<a href=\"Services\/OrderService.php.html#58\">App\\Services\\OrderService::list<\/a>"],[0,3,"<a href=\"Services\/OrderService.php.html#78\">App\\Services\\OrderService::handlePaymentUrl<\/a>"],[100,2,"<a href=\"Services\/Payment\/Handler\/OrderPaymentServiceHandler.php.html#14\">App\\Services\\Payment\\Handler\\OrderPaymentServiceHandler::success<\/a>"],[0,2,"<a href=\"Services\/Payment\/Handler\/OrderPaymentServiceHandler.php.html#24\">App\\Services\\Payment\\Handler\\OrderPaymentServiceHandler::failed<\/a>"],[0,1,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#22\">App\\Services\\Payment\\PayPalPaymentService::__construct<\/a>"],[92.3076923076923,3,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#35\">App\\Services\\Payment\\PayPalPaymentService::purchase<\/a>"],[57.14285714285714,10,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#62\">App\\Services\\Payment\\PayPalPaymentService::webhookHandler<\/a>"],[85.71428571428571,3,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#107\">App\\Services\\Payment\\PayPalPaymentService::completePurchase<\/a>"],[0,1,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#132\">App\\Services\\Payment\\PayPalPaymentService::cancelPurchase<\/a>"],[100,2,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#144\">App\\Services\\Payment\\PayPalPaymentService::success<\/a>"],[0,2,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#157\">App\\Services\\Payment\\PayPalPaymentService::failed<\/a>"],[100,1,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#175\">App\\Services\\Payment\\PayPalPaymentService::throwException<\/a>"],[0,1,"<a href=\"Services\/Payment\/PayPalPaymentService.php.html#183\">App\\Services\\Payment\\PayPalPaymentService::findPaymentTransaction<\/a>"],[0,0,"<a href=\"Support\/Filter\/BaseFilter.php.html#24\">App\\Support\\Filter\\BaseFilter::filter<\/a>"],[0,1,"<a href=\"Support\/Filter\/BaseFilter.php.html#31\">App\\Support\\Filter\\BaseFilter::getMappings<\/a>"],[100,1,"<a href=\"Support\/Filter\/FiltrationEngine.php.html#38\">App\\Support\\Filter\\FiltrationEngine::__construct<\/a>"],[100,1,"<a href=\"Support\/Filter\/FiltrationEngine.php.html#50\">App\\Support\\Filter\\FiltrationEngine::plugFilters<\/a>"],[25,3,"<a href=\"Support\/Filter\/FiltrationEngine.php.html#62\">App\\Support\\Filter\\FiltrationEngine::run<\/a>"],[0,2,"<a href=\"Support\/Filter\/FiltrationEngine.php.html#77\">App\\Support\\Filter\\FiltrationEngine::resolveFilter<\/a>"],[100,1,"<a href=\"Support\/Filter\/FiltrationEngine.php.html#92\">App\\Support\\Filter\\FiltrationEngine::relevantFilters<\/a>"],[0,2,"<a href=\"Support\/Filter\/Handler\/Order\/FromFilter.php.html#17\">App\\Support\\Filter\\Handler\\Order\\FromFilter::filter<\/a>"],[0,2,"<a href=\"Support\/Filter\/Handler\/Order\/StatusFilter.php.html#17\">App\\Support\\Filter\\Handler\\Order\\StatusFilter::filter<\/a>"],[0,2,"<a href=\"Support\/Filter\/Handler\/Order\/ToFilter.php.html#17\">App\\Support\\Filter\\Handler\\Order\\ToFilter::filter<\/a>"],[100,1,"<a href=\"Support\/Filter\/Filterable.php.html#16\">App\\Support\\Filter\\Filterable::scopeFilter<\/a>"],[100,1,"<a href=\"Traits\/ApiResponse.php.html#16\">App\\Traits\\ApiResponse::successResponse<\/a>"],[100,3,"<a href=\"Traits\/ApiResponse.php.html#30\">App\\Traits\\ApiResponse::successResourceResponse<\/a>"],[0,1,"<a href=\"Traits\/ApiResponse.php.html#50\">App\\Traits\\ApiResponse::errorResponse<\/a>"],[100,3,"<a href=\"Traits\/LogsOrderChanges.php.html#13\">App\\Traits\\LogsOrderChanges::bootLogsOrderChanges<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

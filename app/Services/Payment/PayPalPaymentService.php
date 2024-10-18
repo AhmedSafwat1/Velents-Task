@@ -17,7 +17,7 @@ use Omnipay\Omnipay;
 
 class PayPalPaymentService implements PaymentServiceInterface
 {
-    protected GatewayInterface $gateway;
+    public GatewayInterface $gateway;
 
     public function __construct()
     {

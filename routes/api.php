@@ -19,10 +19,6 @@ Route::group(['prefix' => 'v1'], function () {
     });
 
     Route::middleware(['throttle:auth', 'auth:api'])->group(function ($route) {
-        $route->get('/me', function () {
-            return response()->json(auth()->user());
-        });
-
         // Orders Route
         $route->group(['prefix' => 'orders'], function ($orderRoute) {
             // Add
