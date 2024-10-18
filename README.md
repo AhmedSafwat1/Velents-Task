@@ -63,3 +63,8 @@ PUSHER_SCHEME="https"
 ## Testing report with coverage details.
 -  write some unit and create coverage test for but not cover all code 
 -  can find detail in folder coverage
+
+## CI/CD Pipeline
+- do to run unit test 
+- run ./vendor/bin/pint to format code 
+- run ./vendor/bin/phpstan analyse to analyse the code
