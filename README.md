@@ -44,7 +44,7 @@ PAYPAL_TEST_MODE=true
 
 ```bash
  php artisan test
- 
+
 ```
 
 ## Configuring Real-Time Notifications (Use Pusher)
@@ -58,5 +58,5 @@ PUSHER_SCHEME="https"
 
 ## API Documentation (Postman collection)
 - document https://documenter.getpostman.com/view/6461163/2sAXxWYoWb
-- collection https://api.postman.com/collections/6461163-9aaa1a41-17a6-4b77-b8e1-b295d4c49aec?access_key=PMAT-01JAEXKXDFP2XSAR6BG3WE47DC
+- collection Find in project with name `Velents-Task.postman_collection.json`
 
