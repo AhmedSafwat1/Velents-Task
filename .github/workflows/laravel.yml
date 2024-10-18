@@ -3,7 +3,7 @@ name: Laravel CI
 on:
   pull_request:
     branches:
-      - main  # Change this to your default branch if it's different
+      - master
 
 jobs:
   test:
