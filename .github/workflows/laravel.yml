@@ -20,6 +20,9 @@ jobs:
           extensions: mbstring, xml, bcmath, json, mysql  # Add any other required extensions
           coverage: none
 
+      - name: set app key
+        run : php artisan key:generate
+        
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
