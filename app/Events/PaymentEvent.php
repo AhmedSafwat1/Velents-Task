@@ -15,7 +15,7 @@ class PaymentEvent implements ShouldBroadcast
     use InteractsWithSockets;
     use SerializesModels;
 
-    protected PaymentTransaction $paymentTransaction;
+    public PaymentTransaction $paymentTransaction;
 
     /**
      * Create a new event instance.

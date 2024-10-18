@@ -1,6 +1,15 @@
 ## Authors
 - [@Ahmed safwat](https://github.com/AhmedSafwat1)
 
+## Overview
+- use jwt to generate token
+- use omnipay and paypal for payment 
+- use spatie/laravel-permission for permissions
+- pusher/pusher-php-server for realtime notifications
+- provide api for login to generate token
+- provide api for create order 
+- provide api for change status for order ( also did create table contain any changes do in order to kept old and new value)
+- three api to handle payment  complete , cancel  and webhook
 
 ## Requirements
 - php version >=8.0
@@ -25,6 +34,11 @@ DB_PASSWORD=
 - Run Seeder 
 ```bash
 php artisan db:seed
+```
+
+- Create jwt secret
+```bash
+php artisan jwt:secret
 ```
 
 - Now can use this account in api login to get jwt token this user have role admin and have all permission which need
@@ -59,3 +73,13 @@ PUSHER_SCHEME="https"
 ## API Documentation (Postman collection)
 - document https://documenter.getpostman.com/view/6461163/2sAXxWYoWb
 - collection Find in project with name `Velents-Task.postman_collection.json`
+
+## Testing report with coverage details.
+-  write some unit and create coverage test for but not cover all code 
+-  can find detail in folder coverage
+-  coverage around 80 %
+
+## CI/CD Pipeline
+- do to run unit test 
+- run ./vendor/bin/pint to format code 
+- run ./vendor/bin/phpstan analyse to analyse the code

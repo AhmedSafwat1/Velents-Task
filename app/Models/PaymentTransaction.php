@@ -4,11 +4,13 @@ namespace App\Models;
 
 use App\Enums\PaymentStatus;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PaymentTransaction extends Model
 {
     use HasUuids;
+    use HasFactory;
 
     protected $fillable = ['payment_response', 'handler', 'quantity', 'total', 'status'];
 

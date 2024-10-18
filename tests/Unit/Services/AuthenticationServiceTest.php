@@ -2,14 +2,14 @@
 
 namespace Tests\Unit\Services;
 
-use Mockery;
-use Tests\TestCase;
-use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Auth;
 use App\Services\AuthenticationService;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\ValidationException;
+use Mockery;
+use Tests\TestCase;
 
 class AuthenticationServiceTest extends TestCase
 {
@@ -18,14 +18,14 @@ class AuthenticationServiceTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->authService = new AuthenticationService;
-        $this->authService->setRequest(new Request);
+        $this->authService = new AuthenticationService();
+        $this->authService->setRequest(new Request());
     }
 
     /**
      * Test that a user is successfully authenticated when valid credentials are provided.
      */
-    public function testAuthenticatedSuccess()
+    public function test_authenticated_success()
     {
         // Mock user credentials
         $credentials = ['email' => 'test@example.com', 'password' => 'password'];
@@ -36,14 +36,11 @@ class AuthenticationServiceTest extends TestCase
         $mockGuard->shouldReceive('attempt')->once()->with($credentials, true)->andReturn(true);
         $mockGuard->shouldReceive('user')->andReturn($user);
 
-
-
         // Mock RateLimiter facade
         RateLimiter::shouldReceive('clear')->once();
         RateLimiter::shouldReceive('tooManyAttempts')->andReturn(false);
-        
-        Auth::shouldReceive('guard')->twice()->with('api')->andReturn($mockGuard);
 
+        Auth::shouldReceive('guard')->twice()->with('api')->andReturn($mockGuard);
 
         $user = $this->authService->authenticated($credentials);
 
@@ -53,9 +50,9 @@ class AuthenticationServiceTest extends TestCase
     /**
      * Test that a ValidationException is thrown when there are too many login attempts.
      */
-    public function testAuthenticatedTooManyAttempts()
+    public function test_authenticated_too_many_attempts()
     {
-        $this->authService->setRequest(new Request);
+        $this->authService->setRequest(new Request());
 
         RateLimiter::shouldReceive('tooManyAttempts')->andReturn(true);
         RateLimiter::shouldReceive('availableIn')->andReturn(30);
@@ -67,7 +64,7 @@ class AuthenticationServiceTest extends TestCase
     /**
      * Test that a ValidationException is thrown when invalid credentials are provided.
      */
-    public function testAuthenticatedInvalidCredentials()
+    public function test_authenticated_invalid_credentials()
     {
         // Mock user credentials
         $credentials = ['email' => 'test@example.com', 'password' => 'wrongpassword'];
@@ -76,7 +73,6 @@ class AuthenticationServiceTest extends TestCase
         $mockGuard = Mockery::mock();
         $mockGuard->shouldReceive('attempt')->once()->with($credentials, true)->andReturn(false);
         Auth::shouldReceive('guard')->once()->with('api')->andReturn($mockGuard);
-
 
         // Mock RateLimiter facade
         RateLimiter::shouldReceive('tooManyAttempts')->andReturn(false);
